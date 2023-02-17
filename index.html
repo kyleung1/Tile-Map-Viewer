@@ -67,6 +67,25 @@
       #menu a.active:hover {
         background: #3074a4;
       }
+
+      #text-description {
+        background-color: white;
+        margin-top: 10px;
+        margin-left: 10px;
+
+        width: 400px;
+        position: absolute;
+        z-index: 1;
+        padding: 10px;
+      }
+
+      #text-description h1 {
+        text-align: center;
+      }
+
+      #text-description h2 {
+        font-size: 20px;
+      }
     </style>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
   </head>
@@ -74,6 +93,23 @@
   <body>
     <nav id="menu"></nav>
     <div id="map"></div>
+    <div id="text-description">
+      <h1>Tile Map Viewer</h1>
+      <h2>
+        Click on the map tile layers on the right menu to toggle different
+        layers.
+      </h2>
+      <ul>
+        <li>custom_base: a custom base map</li>
+        <li>thematic: a map of chipotle locations</li>
+        <li>
+          thematic+base: chipotle locations overlaying the custom base map
+        </li>
+        <li>
+          usa_theme: a usa themed map with red white and blue color scheme
+        </li>
+      </ul>
+    </div>
     <script type="text/javascript">
       mapboxgl.accessToken =
         "pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw";
@@ -87,48 +123,89 @@
       map.on("load", () => {
         //simplifying the function statement: arrow with brackets to define a function
 
-        map.addSource("uw-tiles", {
+        map.addSource("custom_base", {
           type: "raster",
-          tiles: ["assets/uw/{z}/{x}/{y}.png"],
+          tiles: ["assets/tile_sets1/custom_base/{z}/{x}/{y}.png"],
           tileSize: 256,
-          attribution: "Map tiles designed by Bo Zhao</a>",
+          attribution: "Map tiles designed by Kyle Leung</a>",
         });
 
-        map.addSource("lgbtq-tiles", {
+        map.addSource("thematic", {
           type: "raster",
-          tiles: ["assets/lgbtq/{z}/{x}/{y}.png"],
+          tiles: ["assets/tile_sets2/thematic/{z}/{x}/{y}.png"],
           tileSize: 256,
-          attribution: "Map tiles designed by Bo Zhao",
+          attribution: "Map tiles designed by Kyle Leung",
+        });
+
+        map.addSource("thematic+base", {
+          type: "raster",
+          tiles: ["assets/tile_sets3/thematic+base/{z}/{x}/{y}.png"],
+          tileSize: 256,
+          attribution: "Map tiles designed by Kyle Leung",
+        });
+
+        map.addSource("usa_theme", {
+          type: "raster",
+          tiles: ["assets/tile_sets4/usa_theme/{z}/{x}/{y}.png"],
+          tileSize: 256,
+          attribution: "Map tiles designed by Kyle Leung",
         });
 
         map.addLayer({
-          id: "uw",
+          id: "custom_base",
           type: "raster",
           layout: {
             visibility: "none",
           },
-          source: "uw-tiles",
+          source: "custom_base",
         });
 
         map.addLayer({
-          id: "lgbtq",
+          id: "thematic",
           type: "raster",
           layout: {
             visibility: "none",
           },
-          source: "lgbtq-tiles",
+          source: "thematic",
         });
+
+        map.addLayer({
+          id: "thematic+base",
+          type: "raster",
+          layout: {
+            visibility: "none",
+          },
+          source: "thematic+base",
+        });
+
+        map.addLayer({
+          id: "usa_theme",
+          type: "raster",
+          layout: {
+            visibility: "none",
+          },
+          source: "usa_theme",
+        });
+
+        document.getElementById("text-description").innerHTML = county.length
+          ? `<h3>${county[0].properties.county}</h3><p><strong><em>${county[0].properties.rates}</strong> covid-19 cases per thousand residents</em></p>`
+          : `<p>Hover over a county!</p>`;
       });
 
       // After the last frame rendered before the map enters an "idle" state.
       map.on("idle", () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer("uw") || !map.getLayer("lgbtq")) {
+        if (!map.getLayer("custom_base") || !map.getLayer("thematic")) {
           return;
         }
 
         // Enumerate ids of the layers.
-        const toggleableLayerIds = ["uw", "lgbtq"];
+        const toggleableLayerIds = [
+          "custom_base",
+          "thematic",
+          "thematic+base",
+          "usa_theme",
+        ];
 
         // Set up the corresponding toggle button for each layer.
         for (const id of toggleableLayerIds) {
@@ -178,6 +255,8 @@
           layers.appendChild(link);
         }
       });
+      map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+      map.addControl(new mapboxgl.ScaleControl({ position: "bottom-left" }));
     </script>
   </body>
 </html>
