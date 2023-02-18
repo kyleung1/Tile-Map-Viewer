@@ -44,8 +44,8 @@ Closest zoom. Tiles have the most details. Road and neighborhoods are all able t
 
 ## Examined Geographic Area
 
-> The examined geographic area is generally focused on Seattle and its surrounding area. The tiles are mostly showing seattle area and won't show much else of the rest of the state or country.
+> The examined geographic area is generally focused on Seattle and its surrounding area. The tiles are mostly showing seattle area and won't show much else of the rest of the state or country when zoomed out.
 
 ## Available zoom levels of each tile set
 
-> The available zoom levels of each tile set is at a minimum of 3 and a maximum of 14. They are all the same. The zoom scale is determined by the zoom from the qgis qmetatiles plugin. The references in the above screenshots show from the outer maximum zoom level to a small portion of the maximum zoom level. As each layer is zoomed in, more and more tiles appear with smaller details. The further zoomed out you are the less tiles there are and the closer zoomed in you are the more tiles there are. Lower zoom level tiles reveal more and more details as roads, neighborhoods, road names, etc.
+> The available zoom levels of each tile set is at a minimum of 3 and a maximum of 14. They are all the same. The zoom scale is determined by the zoom from the qgis qmetatiles plugin. The references in the above screenshots show from the outer maximum zoom level to a small portion of the minimum zoom level. As each layer is zoomed in, more and more tiles appear with smaller details. The further zoomed out you are the less tiles there are and the closer zoomed in you are the more tiles there are. Lower zoom level tiles reveal more and more details as roads, neighborhoods, road names, etc.
