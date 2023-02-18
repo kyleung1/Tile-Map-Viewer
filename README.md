@@ -8,19 +8,19 @@ The tile map viewer shows four tileset layers made using mapboxgl, mapboxstudio,
 
 ![custom base map](assets/img/custom_base.PNG)
 
-Monocrhome basemap with modified fonts (state and points of interest), road colors (green), icons (camera).
+Monochrome basemap with modified fonts (state and points of interest), road colors (green), icons (camera). The tileset is projected on a mercator projection. The current zoom level allows us to move around the greater seattle area seemlessly. The maximum zoom level is 14 while the minimum zoom level is 3.
 
 ![thematic map of chipotle](assets/img/thematic.PNG)
 
-Dot density map of Chipotle locations over a monochrome basemap. Data is from [kaggle](https://www.kaggle.com/datasets/jeffreybraun/chipotle-locations)
+Dot density map of Chipotle locations over a monochrome basemap. Data is from [kaggle](https://www.kaggle.com/datasets/jeffreybraun/chipotle-locations). The tileset is projected on a mercator projection. The current zoom level allows us to move around the greater seattle area seemlessly. The maximum zoom level is 14 while the minimum zoom level is 3.
 
 ![thematic map of chipotle over custom base map](assets/img/thematic%2Bbase.PNG)
 
-Dot density map of Chipotle locations over the earlier modified basemap. Colors of the dots are changed to light pink to easily differentiate from the dark background.
+Dot density map of Chipotle locations over the earlier modified basemap. Colors of the dots are changed to light pink to easily differentiate from the dark background. The tileset is projected on a mercator projection. The current zoom level allows us to move around the greater seattle area seemlessly. The maximum zoom level is 14 while the minimum zoom level is 3.
 
 ![usa themed map](assets/img/usa_theme.PNG)
 
-USA themed map with red white and blue color scheme. The fonts of states, points of intersts, neighborhoods are changed. Icons of footballs are placed at points of interests because they represent america's favorite sport.
+USA themed map with red white and blue color scheme. The fonts of states, points of intersts, neighborhoods are changed. Icons of footballs are placed at points of interests because they represent america's favorite sport. The tileset is projected on a mercator projection. The current zoom level allows us to move around the greater seattle area seemlessly. The maximum zoom level is 14 while the minimum zoom level is 3.
 
 ### Different zoom levels
 
