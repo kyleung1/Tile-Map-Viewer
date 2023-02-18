@@ -46,7 +46,7 @@ Closest zoom. Tiles have the most details. Road and neighborhoods are all able t
 
 ## Examined Geographic Area
 
-> The examined geographic area is generally focused on Seattle and its surrounding area. The tiles are mostly showing seattle area and won't show much else of the rest of the state or country when zoomed out.
+> The examined geographic area is generally focused on Seattle and its surrounding area. The tiles are mostly showing the seattle area and won't show much else of the rest of the state or country when zoomed out. The center coordinates of the map are 47.6002614, -122.2559435 which is in the middle of lake washington between Seattle and Bellevue.
 
 ## Available zoom levels of each tile set
 
