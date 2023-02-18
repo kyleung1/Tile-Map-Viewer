@@ -2,6 +2,8 @@
 
 [Click Here](https://kyleung1.github.io/Tile-Map-Viewer/) to view deployment.
 
+The tile map viewer shows four tileset layers made using mapboxgl, mapboxstudio, and qgis. The map layers are my custom made basemap, a thematic map of chipotle locations, a thematic map of chipotle locations over the custom made basemap and a USA themed map.
+
 ## Screenshots
 
 ![custom base map](assets/img/custom_base.PNG)
